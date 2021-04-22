@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ByAirMakeItEasy</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="main.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- school -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Main.css File -->
+    <link rel="stylesheet" href="sass/main.css">
+
+
+</head>
+
+<body>
+    <!-- Top nav menu ********************** -->
+    <header class="page-header">
+        <a href="#" class="logo"><img src="Assets/telegram2.png" alt="" style="width: 1.5em; height: 1.5em;">
+            ByAirMakeiteasy</a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#Foo">Contact</a></li>
+                <input class="search" type="text" placeholder="Search">
+                <i class="fa fa-search icon"></i>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Top nav menu end ******************* -->
+
+    <!-- Sidebar vertical nav *************-->
+
+    <!-- <header class="vernav">
+        <a href="#"></a>
+        <nav>
+            <ul>
+                <li><a href="#">Home5</a></li>
+                <li><a href="#">DropDown</a></li>
+            </ul>
+        </nav>
+    </header> -->
+
+    <!-- Sidebar vertical nav end ********* -->
+
+    <div class="wrapper">
+
+        <section class="hero" id="banner" style="background-image: url(Assets/back/10.jpg);">
+            <div class=" inner">
+                <div class="clipper">
+                    <h1>Travel With us Be The Part</h1>
+                </div>
+                <div class="anim-panel">
+                    <!-- Bar -->
+                    <div class="w3-display-middle" style="width: 65%; height: 80%;">
+                        <div class="w3-bar w3-black">
+                            <button class="w3-bar-item w3-button tablink" onclick="openLink(event,'Flight');"><i
+                                    class="fa fa-plane w3-margin-right"></i>Flight</button>
+                            <button class="w3-bar-item w3-button tablink" onclick="openLink(event,'Hotel');"><i
+                                    class="fa fa-bed w3-margin-right"></i>Booking</button>
+                            <button class="w3-bar-item w3-button tablink" onclick="openLink(event,'Info');"><i
+                                    class="fa fa-bed w3-margin-right"></i>Info</button>
+                        </div>
+                        <!-- Bar end -->
+
+                        <!--  Tabs -->
+                        <div class="travel">
+                            <div id="Flight" class="w3-container w3-padding-16 myLink"
+                                style="background-image: url(Assets/Travel.png); background-size: 100% 100%; height: 600px;">
+                                <h3>Travel the world with us</h3>
+                                <br>
+                                <div class="w3-row-padding" style="margin:0 -16px; ">
+                                    <div class="w3-half">
+                                        <fieldset>
+                                            <label for="from">From :</label>
+                                            <select id='from'>
+                                                <option value="">Select a location...</option>
+                                                <option value="PUN">Pune</option>
+                                                <option value="LKO">Lucknow</option>
+                                                <option value="SYD">Sydney</option>
+                                                <option value="NY">New York City</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                    <div class="w3-half">
+                                        <fieldset>
+                                            <label for="to">To :</label>
+                                            <select id='to'>
+                                                <option value="">Select a location...</option>
+                                                <option value="PUN">Pune</option>
+                                                <option value="LKO">Lucknow</option>
+                                                <option value="SYD">Sydney</option>
+                                                <option value="NY">New York City</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="w3-row-padding" style="margin:0 -16px;">
+                                    <div class="w3-half">
+                                        <fieldset>
+                                            <label for="departure">Departure date :</label>
+                                            <input name="deparure" type="date" class="w3-input" id="deparure"
+                                                placeholder="Select date..." required="">
+                                        </fieldset>
+                                    </div>
+                                    <div class="w3-half">
+                                        <fieldset>
+                                            <div>
+                                                <h4 id="travelcount" onclick="openForm()">1 Adult</h4>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="w3-row-padding w3-center" style="margin-left: 2em; width: 200px;">
+                                    <fieldset id="fieldbtn"
+                                        style="background:linear-gradient(150deg,#04ff36, #00ffe1);">
+                                        <form action="http://localhost:3080/book">
+                                        <button type="submit" id="form-submit1" class="btn" onclick="openit()">Order 
+                                            Ticket Now</button>
+                                            <script src="./Try.js"></script> 
+                                            </form>
+                                            
+                                    </fieldset>
+                                </div>
+ 
+                                <br>
+                            </div>
+                        </div>
+                        <div id="Hotel" class="w3-container w3-white w3-padding-16 myLink">
+                            <h3>YOUR TICKET HAS BEEN BOOKED!</h3>
+                        </div>
+
+                        <div id="Info" class="w3-container w3-white w3-padding-16 myLink">
+                            <h3>Due To covid-19 </h3>
+                            <p><span class="w3-tag w3-deep-orange">DISCOUNT!</span> Special offer if you book today: 10%
+                                off
+                                anywhere in the world</p><br><br>
+                                <h4>Schedules can be changed, please check before booking!</h4>
+                                <form action = "http://localhost:3080/user">
+                                    <button type="submit" id="form-submit" class="btn" onclick="openFormId()" style="background-color: #09f5d9;  box-shadow: 5px 5px 5px rgb(160, 5, 250); font: bold;
+                                    font-size: 1.5em;" >View Flight Info</button>
+                                </form>
+                           
+                        </div>
+                        <!--  Tab End -->
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="sidebar1">
+            <div class="inner">
+                <div class="clipper">
+                    <h2>Why Choose Us</h2>
+                </div>
+                <div class="anim-panel">
+                    <p>
+                        We give best flights AT BEST prices!
+                    </p>
+                    <a class="read-btn second" href="#">Learn more</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sidebar2">
+            <div class="inner">
+                <div class="clipper">
+                    <h2>Choose Your Destiny</h2>
+                </div>
+                <div class="anim-panel">
+                    <p>Get the latest updates about this website and stuff.</p>
+                    <input placeholder="Email Address" type="text" name="email">
+                    <button class="cta">Subscribe Now</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="places slideanim" style="background-color: #282D3C;">
+        <!-- Page content -->
+        <div class="w3-content" style="max-width:1100px;">
+
+            <!-- Good offers -->
+            <div class="w3-container"
+                style="background-color:#D2386C; color: azure; width: 1240px; margin-top: -1em; z-index:1; position: absolute; display: inline-block;">
+                <h3>Good Offers Right Now</h3>
+                <h6>Up to <strong>50%</strong> discount.</h6>
+            </div>
+            <div class="w3-row-padding w3-text-white w3-large" style="padding-top: 4.5em;">
+                <div class="w3-half w3-margin-bottom">
+                    <div class="w3-display-container slideanimxl">
+                        <img src="Assets/Places/cinqueterre.jpg" alt="Cinque Terre" style="width:100%">
+                        <span class="w3-display-bottomleft w3-padding">Cinque Terre</span>
+                    </div>
+                </div>
+                <div class="w3-half">
+                    <div class="w3-row-padding" style="margin:0 -16px">
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container slideanimxl">
+                                <img src="Assets/Places/newyork2.jpg" alt="New York" style="width:100%">
+                                <span class="w3-display-bottomleft w3-padding">New York</span>
+                            </div>
+                        </div>
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container slideanimxl">
+                                <img src="Assets/Places/sanfran.jpg" alt="San Francisco" style="width:100%">
+                                <span class="w3-display-bottomleft w3-padding">San Francisco</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-row-padding" style="margin:0 -16px">
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container slideanimxl">
+                                <img src="Assets/Places/pisa.jpg" alt="Pisa" style="width:100%">
+                                <span class="w3-display-bottomleft w3-padding">Pisa</span>
+                            </div>
+                        </div>
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container slideanimxl">
+                                <img src="Assets/Places/paris.jpg" alt="Paris" style="width:100%">
+                                <span class="w3-display-bottomleft w3-padding">Paris</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="w3-row-padding w3-text-white w3-large">
+
+                <div class="w3-half">
+                    <div class="w3-row-padding" style="margin:0 -16px">
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container slideanimx">
+                                <img src="Assets/Places/cb9391a1-city-16803-175265b2aff.jpg" alt="New York"
+                                    style="width:100%">
+                                <span class="w3-display-bottomleft w3-padding">Pune</span>
+                            </div>
+                        </div>
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container slideanimx">
+                                <img src="Assets/Places/ca54450a-city-7297-164a3add188.jpg" alt="San Francisco"
+                                    style="width:100%; height: 188px;">
+                                <span class="w3-display-bottomleft w3-padding">Hyderabad</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-row-padding" style="margin:0 -16px">
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container slideanimx">
+                                <img src="Assets/Places/cd4e2dcb-city-31288-16561d77fbf.jpg" alt="Pisa"
+                                    style="width:100%; height: 173px;">
+                                <span class="w3-display-bottomleft w3-padding">Mumbai</span>
+                            </div>
+                        </div>
+                        <div class="w3-half w3-margin-bottom">
+                            <div class="w3-display-container slideanimx">
+                                <img src="Assets/Places/c81781c0-city-14559-166f2c60754.jpg" alt="Paris"
+                                    style="width:100%; height: 173px;">
+                                <span class="w3-display-bottomleft w3-padding">Bengaluru</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w3-half w3-margin-bottom" style="margin-left: 0em;">
+                    <div class="w3-display-container slideanimx">
+                        <img src="Assets/Places/e8139d0b-city-57920-166f4e65f99.jpg" alt="Cinque Terre"
+                            style="width:100%; height: 379px;">
+                        <span class="w3-display-bottomleft w3-padding">Panaji</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Image gallery  -->
+    <div style="background: linear-gradient(#1d5aca, #b516c3);">
+        <div class="image-gallery slideanim" style="font-family: 'Fredoka One', cursive;">
+            <div class="slideshow-container" style="font-size: 1.5em; margin-bottom: 2em;">
+                <div class="mySlides">
+
+                    <img src="Assets/Image-gallery/philippines.jpg" style="width:100%; border-radius: 5%;">
+                    <div class="text" style="font-size: 1em;">Philippines</div>
+                </div>
+
+                <div class="mySlides">
+
+                    <img src="Assets/Image-gallery/indonesia.jpg" style="width:100%; border-radius: 5%;">
+                    <div class="text" style="font-size: 1em;">Indonesia</div>
+                </div>
+
+                <div class="mySlides">
+
+                    <img src="Assets/Image-gallery/vietnam.jpg" style="width:100%; border-radius: 5%;">
+                    <div class="text" style="font-size: 1em; ">Vietnam</div>
+                </div>
+
+                <div class="mySlides">
+
+                    <img src="Assets/Image-gallery/turkey.jpg" style="width:100%; border-radius: 5%;">
+                    <div class="text" style="font-size: 1em; ">Turkey</div>
+                </div>
+
+                <div class="mySlides">
+
+                    <img src="Assets/Image-gallery/greece.jpg" style="width:100%; border-radius: 5%;">
+                    <div class="text" style="font-size: 1em; ">Greece</div>
+                </div>
+
+                <div class="mySlides">
+
+                    <img src="Assets/Image-gallery/Sydney.jpg" style="width:100%; border-radius: 5%;">
+                    <div class="text" style="font-size: 1em; ">Sydney</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+            <br>
+
+        </div>
+    </div>
+
+    <!-- About -->
+
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container slideanim">
+        <div class="w3-content">
+            <div class="w3-twothird">
+                <h1>Worry-Free Travel</h1>
+                <h5 class="w3-padding-32">
+                    <P>Even in these uncertain times, we give you the assurance that you that you can still travel and
+                        explore the world with confidence. From dreaming, to planning, to booking, we’re with you every
+                        step of the way. </P>
+                </h5>
+                <hr style="width:1320px; border:5px solid rgb(132, 0, 255);" class="w3-round slideanimx">
+            </div>
+
+            <div class="w3-third w3-center">
+                <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Grid -->
+    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container slideanim">
+        <div class="w3-content">
+            <div class="w3-third w3-center">
+                <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+            </div>
+
+            <div class="w3-twothird">
+                <h1>Find the right flight</h1>
+                <h5 class="w3-padding-32 w3-text-grey">
+                    Search hundreds of other travel sites at once <br> <br>
+                    Set a Price Alert and never miss a deal <br> <br>
+                    Book with confidence with Price Forecast
+                </h5>
+                <hr style="width:1320px; border:5px solid rgb(0, 255, 221);" class="w3-round slideanimx">
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container slideanim">
+        <div class="w3-content">
+            <div class="w3-twothird">
+                <h2>HOW WILL I STAY WELL WHILE TRAVELING?</h2>
+                <h5 class="w3-padding-32">
+                    <P>Your wellbeing is our priority. Our 3-step distancing and hygiene protocol, which includes your
+                        dedicated always-on support team, means you can travel with complete ease and peace of mind.</P>
+                </h5>
+                <hr style="width:1320px; border:5px solid rgb(0, 255, 21);" class="w3-round slideanimx">
+            </div>
+
+            <div class="w3-third w3-center">
+                <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Customer review -->
+    <div id="demo" class="carousel slideanim" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <h1 class="w3-xxxlarge w3-text-red" style="text-align: center;"><b>What Our Customers Say.</b></h1>
+        <hr style="width:1320px; border:5px solid red;" class="w3-round slideanimxl">
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <h1>"Could I... BE any more happy with this company?"</h1>
+                    <p>Mike Roe, Vice President, Comment Box</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <h1>"One word... WOW!!"</h1>
+                    <p>Sasuke, Engineer, Commment Box</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <h1>"You Can Book Flight on the go"</h1>
+                    <p>khushboo, Sales Head, Comment Box</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main_footer slideanim" id="Foo"
+        style="background: url('Assets/Frame.jpg'); margin-top: 0em; height: 500px; background-color: #ffffff;">
+        <div class="row" style="color:#fdfdfd; padding: 15px;">
+            <div class="col-1" style="margin-top: 9em;">
+                <ul style="list-style-type: none;">
+                    <li><b>Reference</b></li>
+                    <br>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>LinkedIn</li>
+                    <li>Email</li>
+                </ul>
+            </div>
+            <div class="col-1" style="margin-top: 9em;">
+                <ul style="list-style-type: none;">
+                    <li><b>Downloads</b></li>
+                    <br>
+                    <li>Guide</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <div class="col-6" style="margin-top: 9em; margin-left:0em; ">
+                <!-- Contact -->
+                <div class="w3-container w3-center" style="margin-left: -12em;" id="contact">
+                    <h2 style="color: rgb(0, 255, 170); font-family: 'Fredoka One', cursive;">Contact</h2>
+                    <i class="fa fa-map-marker" style="width:30px"></i>Pune, Maharastra<br>
+                    <i class="fa fa-phone" style="width:30px"></i> Phone: +91 0123456789<br>
+                    <i class="fa fa-envelope" style="width:30px"> </i> Email: PBL@email.com<br>
+                    <br>
+                    <p>Questions? Go ahead, ask them:</p>
+                    <button type="submit" class="w3-button  w3-blue "
+                        onclick="document.getElementById('contactus').style.display='block'">Contact Us</button>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <!-- Contact -->
+                <div class="w3-container">
+                    <img src="Assets/Logonew1.png" alt=""
+                        style="border-radius: 5%; margin-top: -5em; margin-right: 0em;">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+        <h5>Find Us On</h5>
+        <div class="w3-xlarge w3-padding-16">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        <p>Powered by <a href="#" target="_blank" class="w3-hover-text-deep-orange">Resfeber</a></p>
+    </footer>
+
+    <!-- Contact pop up -->
+    <div class="w3-container w3-modal" id="contactus">
+        <div class=" w3-modal-content w3-animate-zoom w3-padding-large">
+            <div class="w3-container w3-white w3-center">
+                <i onclick=" document.getElementById('contactus').style.display='none' "
+                    class=" fa fa-remove w3-button w3-xlarge w3-right w3-transparent"></i>
+                <h2>Contact</h2>
+                <form action="/action_page.php" target="_blank">
+                    <p><input class="w3-input w3-border" style="width: 70%;" type="text" placeholder="Name" required
+                            name="Name"></p>
+                    <p><input class="w3-input w3-border" style="width: 70%;" type="text" placeholder="Email" required
+                            name="Email"></p>
+                    <p><input class="w3-input w3-border" style="width: 70%;" type="text" placeholder="Message" required
+                            name="Message"></p>
+                    <button type="submit" class="w3-button w3-deep-orange w3-third">Send a Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- No of passenger popup -->
+    <div class="w3-container w3-modal passenger" id="passenger">
+        <div class=" w3-modal-content w3-animate-zoom w3-padding-large" style="width: 380px;">
+            <div class="w3-container w3-white w3-center">
+                <h2>Cabin class</h2>
+                <br>
+                <form>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inline" id="economy" value="economy"
+                            onclick="updatecount()">
+                        <label class="form-check-label" for="inlineRadio1">ECONOMY</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inline" id="business" value="business"
+                            onclick="updatecount()">
+                        <label class="form-check-label" for="inlineRadio2">BUSINESS</label>
+                    </div>
+                    <br>
+                    <h2>Travellers</h2>
+                    <br>
+                    <label>Adults----: </label><input id="number1" type="number" value="1" min="1"
+                        onclick="updatecount()">
+                    <br>
+                    <label>childrens-: </label><input id="number2" type="number" value="0" min="0"
+                        onclick="updatecount()">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat&display=swap');
+
+$primary-color:#02B290;
+$submit-btn-bg-color: black;
+$submit-btn-color: white;
+
+
+body,html {
+  margin: 0;
+}
+
+// carousal
+.carousel-item {
+    height: 32rem;
+    background: #282d3c;
+    color: white;
+    position: relative;
+
+  }
+
+  .container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 10em;
+  }
+//carousal end
+
+body {
+  height: 100%;
+  display: none;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  position: absolute;
+  padding: 1em;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 2em);
+  background:none;
+  font-family: 'Montserrat', sans-serif;
+  
+  a {
+      text-decoration: none;
+      font-size: 1.4em;
+      color: black;
+      font-family: 'Pacifico';
+      img{
+          width: 300px;
+      }
+  }
+
+  a.logo {
+      font-weight: bold;
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: bold;
+      font-size: 1.5em;
+      margin-top: -0.5em;
+      margin-left: 0.5em;
+  }
+
+  nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      li a {
+          padding:1em;
+          font-size: 1.2em;
+         
+      }
+
+      .search{
+        border: 3px rgb(28, 255, 168) solid;
+        margin-left: 1.5em;
+        margin-right: 0.7em;
+      }
+
+      .icon {
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        border-radius: 30%;
+        min-width: 50px;
+        text-align: center;
+        margin-right: 2em;
+      }
+
+  }
+}
+
+
+.wrapper
+{
+    display: grid;
+    grid-template-columns: 80% auto;
+    grid-template-rows: 60% auto;
+    grid-template-areas:
+        "hero sidebar1"
+        "hero sidebar2";
+        height: 100vh;
+
+    section{
+        padding: 18px;
+
+        h1, h2, .read-btn{
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1{
+            font-size: 0.5em;
+        }
+        h2{
+            font-size: 2rem;
+        }
+
+        .read-btn{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/arrow.svg') no-repeat;
+            background-size: 10px;
+            background-position: 0 1px;
+            padding-left: 1em;
+
+        }
+        .second{
+            padding: 1.5em 1.5em 1.5em calc(3em + 25px);
+            background-position:3em;
+            border: 1px solid gray;
+            border-left: none;
+            margin-top: 3em;
+            margin-left: -1.4em;
+            display: inline-block;
+        }
+
+        .clipper{
+            overflow: hidden;
+        }
+    
+    }
+
+    section.hero{
+
+        grid-area: hero;
+        padding-top: 8em;
+        // background-image: url('C:\\Users\\Babasaheb\\Desktop\\CodeWin10\\Html\\Airflow\\public\\Assets\\back\\10.jpg');
+        background-size: cover;
+        transition: background-image 4.7s ease-in-out;
+
+        p{
+            width: 70%;
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            
+        }
+
+        h1{
+            font-size: 2.5rem;
+            font-family: 'Josefin Sans', sans-serif;
+
+        }
+
+        .w3-display-middle{
+            margin-top: 3em;
+            margin-left: -5em;
+            display: inline-block;
+        }
+    
+    }
+
+    section.sidebar1, section.sidebar2 {
+        font-size: .9rem;
+        line-height: 1.6em;
+    }
+
+    section.sidebar1{
+        background: $primary-color;
+        padding-top: 5em;
+        color: aliceblue;
+
+        h2{
+            font-family: 'Fredoka One', cursive;
+        }
+
+        p{
+            padding-top: 1em;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            color: rgb(255, 255, 255);
+        }
+        .read-btn{
+            margin-top: 2em;
+            display: block;
+            background-position: 1em;
+            width: 200px;
+        }
+
+    }
+
+    section.sidebar2{
+        p{
+            padding-top: 1em;
+        }
+        input{
+            width: 100%;
+            padding: 1em;
+            font-family: 'Montserrat';
+            margin-bottom: 1em;
+        }
+        button{
+            width: 100%;
+            background: $submit-btn-bg-color;
+            color: $submit-btn-color;
+            padding: 1em;
+            border: none;
+            font-family: 'Montserrat';
+        }
+    }
+
+
+}
+
+.image-gallery{
+    /* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    padding-top: 1em;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+}
+
+.slideanim {visibility:hidden;}
+.slide {
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  visibility: visible;
+} 
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  } 
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.slideanimx {visibility:hidden;}
+.slidex {
+  animation-name: slidex;
+  -webkit-animation-name: slidex;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  visibility: visible;
+} 
+
+@keyframes slidex {
+  0% {
+    opacity: 0;
+    transform: translateX(70%);
+  } 
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.slideanimxl {visibility:hidden;}
+.slidexl {
+  animation-name: slidexl;
+  -webkit-animation-name: slidexl;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  visibility: visible;
+} 
+
+@keyframes slidexl {
+  0% {
+    opacity: 0;
+    transform: translateX(-70%);
+  } 
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+
+
+//Tab style
+
+.myLink{
+
+  // background-color: #FF6F61;
+  // background:linear-gradient(150deg,#f3ff0a,#00ffe1);
+  background: transparent;
+  object-fit: cover;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+fieldset{
+  border:none;
+  box-shadow: 10px 5px 20px blueviolet;
+  background:linear-gradient(150deg,#7d03ff, #00ffe1);
+  color: #f2f2f2;
+  transition: margin 1s;
+
+  label{
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.3em;
+  margin-right: 0.5em;
+  }
+
+  select{
+    border: none;
+    height: 30px;
+    box-shadow: 5px 5px 10px rgb(167, 79, 56);
+  }
+  
+}
+
+fieldset:hover{
+
+margin: 10px;
+}
+
+
+.passenger{
+  display:none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  label{
+    font-size: 1.4em;
+  }
+
+  h2{
+    color: #00ff11;
+    font-family: 'Fredoka One', cursive;
+    font-size: bold;
+
+  }
+
+  #number1{
+    height: 2em;
+    width: 4em;
+    margin-left: 2em;
+  }
+  #number2{
+    height: 2em;
+    width: 4em;
+    margin-left: 2em;
+  }
+}
+
+.w3-modal-content{
+  position: absolute;
+  top: 56%;
+  left: 38%;
+  
+}

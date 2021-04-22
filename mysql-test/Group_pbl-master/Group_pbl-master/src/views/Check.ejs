@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        Flight details
+    </head>
+    <body>
+        <div class = "flight">
+            <h2>Overall Flight Info</h2>
+            <table border = "1">
+                <tr>
+                    <th>Serial Number</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Flight Name</th>
+                    <th>Class</th>
+                    <th>Cost</th>
+                </tr>
+                <%
+                if(data.length!=0){
+                    var i = 1;
+                    data.forEach(function(data){
+                %>
+                        <tr>
+                            <td><%=i; %></td>
+                            <td><%=data.From %></td>
+                            <td><%=data.To %></td>
+                            <td><%=data.Flight_Name %></td>
+                            <td><%=data.Class %></td>
+                            <td><%=data.Cost %></td>
+                        </tr>
+                        <% i++; }) %>
+                        <% } else{ %>
+                            <tr>
+                                <td colspan="8"> NO DATA FOUND! </td>
+                            </tr>
+                        <% } %>
+
+
+            </table>
+        </div>
+    </body>
+</html>
