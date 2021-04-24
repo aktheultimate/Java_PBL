@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>ByAirMakeItEasy</title>
+    <title>BookMyFlight</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +29,7 @@
     <!-- Top nav menu ********************** -->
     <header class="page-header">
         <a href="#" class="logo"><img src="Assets/telegram2.png" alt="" style="width: 1.5em; height: 1.5em;">
-            ByAirMakeiteasy</a>
+            BookMyFlight</a>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -78,6 +78,7 @@
                         <!-- Bar end -->
 
                         <!--  Tabs -->
+                        <form method="GET">
                         <div class="travel">
                             <div id="Flight" class="w3-container w3-padding-16 myLink"
                                 style="background-image: url(Assets/Travel.png); background-size: 100% 100%; height: 600px;">
@@ -87,38 +88,94 @@
                                     <div class="w3-half">
                                         <fieldset>
                                             <label for="from">From :</label>
-                                            <select id='from'>
+                                            <form action="/verify", method="GET">
+                                            <select class = "from" id='from' name="from">
                                                 <option value="">Select a location...</option>
                                                 <option value="PUN">Pune</option>
                                                 <option value="LKO">Lucknow</option>
                                                 <option value="SYD">Sydney</option>
                                                 <option value="NY">New York City</option>
                                             </select>
+                                            <!-- <input type="submit" /> -->
+                                        <!-- </form> -->
                                         </fieldset>
                                     </div>
                                     <div class="w3-half">
                                         <fieldset>
                                             <label for="to">To :</label>
-                                            <select id='to'>
+                                            <!-- <form action="/verify", method="GET"> -->
+                                            <select class = "to" id='to' name = "to">
                                                 <option value="">Select a location...</option>
                                                 <option value="PUN">Pune</option>
                                                 <option value="LKO">Lucknow</option>
                                                 <option value="SYD">Sydney</option>
                                                 <option value="NY">New York City</option>
                                             </select>
+                                            <!-- <input type="submit" /> -->
+                                                                                  
                                         </fieldset>
+                                    </div>
+                                    <div class="w3-half">
+                                        <fieldset>
+                                            <label for="flight">Flight :</label>
+                                        <select class = "flight" id='flight' name = "flight">
+                                            <option value="">Select your flight...</option>
+                                            <option value="Indigo">Indigo</option>
+                                            <option value="Air India">Air India</option>
+                                            <option value="Jet Airways">Jet Airways</option>
+                                            <!-- <option value="NY">New York City</option> -->
+                                        </select>
+                                    </fieldset>
+                                    </div>
+                                    <div class="w3-half">
+                                        <fieldset>
+                                            <label for="cls">Class :</label>
+                                        <select class = "cls" id='cls' name = "cls">
+                                            <option value="">Select the class...</option>
+                                            <option value="Business">Business</option>
+                                            <option value="Economy">Economy</option>
+                                            <!-- <option value="Jet Airways">Jet Airways</option> -->
+                                            <!-- <option value="NY">New York City</option> -->
+                                        </select>
+                                    </fieldset>
+                                    </div>
+                                    <div class="w3-half">
+                                        <fieldset>
+                                            <label for="no">Number of people :</label>
+                                        <select class = "no" id='no' name = "no">
+                                            <option value="">Number of seats..</option>
+                                            <option value=1>1</option>
+                                            <option value=2>2</option>
+                                            <option value=3>3</option>
+                                            <option value=4>4</option>
+                                            <!-- <option value="Jet Airways">Jet Airways</option> -->
+                                            <!-- <option value="NY">New York City</option> -->
+                                        </select>
+                                    </fieldset>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="w3-row-padding" style="margin:0 -16px;">
-                                    <div class="w3-half">
-                                        <fieldset>
+                                    <div class="w3-third">
+                                        <fieldset >
                                             <label for="departure">Departure date :</label>
-                                            <input name="deparure" type="date" class="w3-input" id="deparure"
+                                            <input name="departure" type="date" class="w3-input" id="departure"
                                                 placeholder="Select date..." required="">
                                         </fieldset>
                                     </div>
-                                    <div class="w3-half">
+                                    <div class="w3-third">
+                                        <fieldset >
+                                            <label for="times">Time :</label>
+                                            <select class = "times" required name='times'>
+                                                <option value="">Select a Time...</option>
+                                                <option value="09:00am">09:00am</option>
+                                                <option value="11:00am">11:00am</option>
+                                                <option value="04:00pm">04:00pm</option>
+                                                <option value="09:00pm">09:00pm</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                    <div class="w3-third">
                                         <fieldset>
                                             <div>
                                                 <h4 id="travelcount" onclick="openForm()">1 Adult</h4>
@@ -127,18 +184,32 @@
                                     </div>
                                 </div>
                                 <br>
-                                <div class="w3-row-padding w3-center" style="margin-left: 2em; width: 200px;">
-                                    <fieldset id="fieldbtn"
-                                        style="background:linear-gradient(150deg,#04ff36, #00ffe1);">
-                                        <form action="http://localhost:3080/book">
-                                        <button type="submit" id="form-submit1" class="btn" onclick="openit()">Order 
-                                            Ticket Now</button>
-                                            <script src="./Try.js"></script> 
-                                            </form>
-                                            
+                                <div class="w3-row-padding w3-center" style="margin-top: 0em; width: 200px;">
+                                    <fieldset id="fieldbtn" style="background:linear-gradient(150deg,#04ff36, #00ffe1);">
+                                        <!-- <form action="http://localhost:3080/verify", method="GET"> -->
+                                        <button formaction = "http://localhost:3080/verify", type="submit" id="chk" name="chk" class="btn" onclick="openitwe()">Check Flight</button>
+                                        <!-- <script src="./Tryagain.js"></script> -->
+                                                    <!-- <script src="../src/routes/verify.js"></script> -->
+                                                <!-- </form> -->
                                     </fieldset>
                                 </div>
- 
+                                <div class="w3-row-padding w3-center" style="margin-top: 1em; width: 200px;">
+                                    <fieldset id="fieldbtn"
+                                        style="background:linear-gradient(150deg,#04ff36, #dde01f);">
+                                        <!-- <form action="http://localhost:3080/book", method="GET"> -->
+                                        <button formaction = "http://localhost:3080/book", type="submit" id="form-submit1" class="btn" onclick="openit()">Order 
+                                            Ticket Now</button>
+                                            <script src="./Try.js"></script> 
+                                            <!-- </form> -->
+                                        </form>
+                                            <!-- <form action="http://localhost:3080/verify", method="GET"> -->
+                                                <!-- <button type="submit" id="form-submit1" class="btn" onclick="openitwe()">Verify</button> -->
+                                                    <!-- <script src="./Tryagain.js"></script> -->
+                                                    <!-- <script src="../src/routes/verify.js"></script>  -->
+                                                    <!-- </form> -->
+                                    </fieldset>
+                                </div>
+                            </form>
                                 <br>
                             </div>
                         </div>

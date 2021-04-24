@@ -15,6 +15,7 @@ var connection = require('./app-sql');
 //var indexRouter = require('./Index.html');
 var usersRouter = require('./routes/usersfile');
 var bookRouter = require('./routes/booking');
+var verRouter = require('./routes/verify');
 const { title } = require('process');
 var app = express();
 
@@ -39,7 +40,7 @@ app.use(express.static(staticpath));
 // });
 
 app.get('/', (req, res) => {
-    res.sendFile(staticpath + '/index.html');
+    res.render(staticpath + '/index.ejs');
 });
 
 // app.get('/hi', (req, res) => {
@@ -59,12 +60,88 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine','ejs');
 
 app.use(logger('dev'));
+//app.use(bodyParser);
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'public')));
 app.use('/user',usersRouter);
-app.use('/book',bookRouter);
+//app.use('/book',bookRouter);
+app.get('/book',function(req,res){
+  let sqlq="SELECT * FROM travelpoint WHERE To_code=? AND From_code=? AND Flight_Name=? AND Class=?";
+  var a1 = req.query.to;
+    var b2 = req.query.from;
+    var c3 = req.query.flight;
+    var d4=req.query.cls;
+  connection.query(sqlq,[a1,b2,c3,d4],function(err,rows){
+    if(err){
+        //req.flash('error', err); 
+       // res.render('Checker',{page_title:"FLIGHTS DATA",data:''});   
+       throw err;
+       }else{rows.forEach((row)=>{
+        // console.log("Serial: ", row.Serial, " From: ", row.From, "  To: ", row.To, " Flight name: ", row.Flight_name, " Class: ", row.Class, " Cost: ",row.Cost);
+       
+       
+         let tot = Number(row.Cost);
+         let idno = x = Math.floor((Math.random() * 1000000) + 1);;
+         let nooft = req.query.no;
+         tot = tot*nooft;
+         let td = req.query.times;
+         let cls = req.query.cls;
+         //let tot = 70000;
+         let name = "Akash";
+           let sqls = "INSERT INTO userdata (Serial_No,Name,Number_of_tickets,Class,Time_date,Total_Amount_Paid) VALUES ("+idno+",'"+name+"',"+nooft+",'"+cls+"','"+td+"',"+tot+")";
+           let q = connection.query(sqls,(err,results)=>{
+               if(err) throw err;
+               console.log("VALUES INSERTED!\n");
+               res.render('Booked');
+               //res.redirect('/');
+             });
+            });
+       }
+      
+        
+        
+
+  });
+
+  });
+//app.use('/verify',verRouter);
+app.get('/verify',function(req, res){
+  
+    var a1 = req.query.to;
+    console.log(a1);
+    var b2 = req.query.from;
+    var c3 = req.query.flight;
+    var d4=req.query.cls;
+    //var a1 = "PUN";
+    //var b2 = "LKO";
+    var a = String(a1);
+    var b = String(b2);
+    let n = 5;
+    //app.get('/verify',(res,req)=>{
+        let sqlq = "SELECT * FROM travelpoint WHERE To_code=? AND From_code=? AND Flight_Name=? AND Class=?";
+        // ;
+        connection.query(sqlq,[a1,b2,c3,d4],function(err,rows){
+            if(err){
+                //req.flash('error', err); 
+               // res.render('Checker',{page_title:"FLIGHTS DATA",data:''});   
+               throw err;
+               }else{
+                console.log('Data recieved from Travelpoint Database is: \n ');
+                rows.forEach((row)=>{
+                 // console.log("Serial: ", row.Serial, " From: ", row.From, "  To: ", row.To, " Flight name: ", row.Flight_name, " Class: ", row.Class, " Cost: ",row.Cost);
+                
+                });
+                res.render('Check',{page_title:"FLIGHTS DATA",data:rows});
+                   
+                   //res.render('Checker',{page_title:"FLIGHTS DATA",data:rows});
+               }
+    
+          });
+    
+
+});
 
 /*app.use(function(req, res, next) {
     next(createError(404));

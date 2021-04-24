@@ -12,8 +12,15 @@ var del = require('../../public/Try');
    // alert("Recieved From: " + from + " to: " + to);
 }
 
+let idno = 5;
+let nooft = 6;
+let td = "4:50";
+let cls = "Business";
+let tot = 50000;
+let name = "Better Dummy";
+
 router.get('/', function(req, res, next) {
-    let sqls = "INSERT INTO userdata (Serial_No,Name,Number_of_tickets,Class,Time_date,Total_Amount_Paid) VALUES (7977,'Dummy',4,'Economy','4:50',50000)";
+    let sqls = "INSERT INTO userdata (Serial_No,Name,Number_of_tickets,Class,Time_date,Total_Amount_Paid) VALUES ("+idno+",'"+name+"',"+nooft+",'"+cls+"','"+td+"',"+tot+")";
     let q = connection.query(sqls,(err,results)=>{
         if(err) throw err;
         console.log("VALUES INSERTED!\n");
