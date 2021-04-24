@@ -1,0 +1,77 @@
+const mongoose =require('mongoose');
+
+const ticketSchema = new mongoose.Schema({
+  bookedBy:{
+      type:mongoose.SchemaTypes.ObjectId,
+      ref:"railUser",
+      required:true
+  },
+  firstName:{
+      type:String,
+      required:true
+  },
+  midName:{
+      type:String
+  },
+  lastName:{
+      type:String,
+      required:true
+  },
+  gender:{
+      type:String,
+      required:true
+  },
+  age:{
+      type:Number,
+      required:true
+  },
+  trainInfo:{
+      type:mongoose.SchemaTypes.ObjectId,
+      ref:"rail",
+      required:true
+  },
+  trainName:{
+    type:String,
+    required:true
+  },
+  from:{
+      type:mongoose.SchemaTypes.ObjectId,
+      ref:"station",
+      required:true
+  },
+  fromName:{
+      type:String,
+      required:true
+  },
+  to:{
+    type:mongoose.SchemaTypes.ObjectId,
+    ref:"station",
+    required:true
+  },
+  toName:{
+    type:String,
+    required:true
+  }, 
+  blockId:{
+      type:String,
+      require:true
+  },
+  seatNo:{
+      type:Number,
+      required:true
+  },
+  totalFair:{
+      type:Number,
+      required:true
+  },
+  ticketStatus:{
+      type:String,
+      required:true,
+      default:"Active"
+  }
+},
+{
+    timestamps:true
+})
+
+module.exports = mongoose.model('ticket',ticketSchema);

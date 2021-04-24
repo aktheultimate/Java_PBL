@@ -1,0 +1,119 @@
+.source{
+  height: 50px;
+    max-width: 400px;
+    padding: 15px;
+    margin: auto;
+  }
+ .word{
+   font-family:'Courier New', Courier, monospace;
+   font-size: x-large;
+   font-weight: bold;
+   margin-left: 110px;
+   margin-top: 70px;
+
+ }
+.hey{
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+.search{
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+  margin-top: 50px;
+  font-weight: bold;
+
+  
+}
+.trainimg{
+  width: 100px;
+  display: block;
+  margin: 10px auto;
+}
+
+.searchbtn{
+  width: 120px;
+  margin-top: 25px;
+margin-left: 150px;
+}
+.covid{
+  background: #fff3cd;
+    color: #856404;
+    border: 1px solid #f1dfab;
+    padding: 13px 15px 13px 55px;
+    border-radius: 20px;
+    width: 35%;
+    position: relative;
+    margin: 12px auto;
+    display: table;
+    height: 40%;
+    float: left;
+    margin-left: 10px;
+
+}
+.covidimg{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.link{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.covidfriend{
+  color: #31708f;
+    background-color: #d9edf7;
+    border: 1px solid #bce8f1;
+    position: absolute;
+    padding: 13px 15px;
+    border-radius: 20px;
+    width: 35%;
+    margin: 12px auto;
+    margin-left: 10px;
+    float: left;
+    margin-top: 150px;
+
+}
+.friendimg{
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 80px;
+}
+
+.travel{
+  margin-left: 30px;
+}
+
+.dest{
+  height: fit-content  ;
+
+  margin-top: 10px;
+  font-size: x-large;
+  font-weight: bold;
+margin-left: 110px;
+font-family:'Courier New', Courier, monospace;
+
+}
+.sorce{
+  height: fit-content  ;
+  font-size:x-large ;
+  font-weight: bold;
+margin-left: 110px;
+margin-top: 70px;
+font-family:'Courier New', Courier, monospace;
+
+}
+.input{
+  border: 2px solid red;
+  border-radius: 4px;
+}
+.fancy{
+  position: relative;
+  float: right ;
+  width: 30%;
+}
+.Container{
+  margin-top: 100px;
+}
+body{
+  background-color: red;
+}

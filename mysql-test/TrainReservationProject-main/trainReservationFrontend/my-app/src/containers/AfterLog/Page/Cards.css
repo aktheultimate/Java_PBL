@@ -1,0 +1,21 @@
+
+
+.box {
+  margin-left: 40%;
+  flex-wrap: wrap;
+  margin-right: 70px;
+  padding-top: 100px;
+  
+}
+
+
+
+.carousel {
+  width:100%;
+  height: auto;
+  margin: auto;
+}
+.App{
+  margin-top: 50px;
+  margin-bottom: 500px;
+}
